@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=8gDO8JvnteK6vMk2Brs6LDF9QawFxftItDrGT_jcaoM9zXNYLD8O8HshMxGuUFE5hZXtmxbjMFSPswidX1bZf1GgseotnQuHL8JnYrJwHGkHDv28YlSHs4Czca8N8as0lcWhKiR4Bo5NJYqaKej_LQ" charset="UTF-8"></script>
+  <script src="https://cdn.jsdelivr.net/npm/faunadb@latest/dist/faunadb.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Red+Hat+Text" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FalconNews - Create News</title>
+</head>
+  <style>
+
+  @font-face {
+  font-family: 'Red Hat Text';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/redhattext/v6/RrQCbohi_ic6B3yVSzGBrMx6ZI_cy1A6Ok2ML7hwZr_QcLVF.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;   
+}
+
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #474747; 
+  border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #4f4f4f; 
+}
+
+body {font-family: Red Hat Text;}
+* {box-sizing: border-box;}
+  
+  /* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #303030;
+  caret-color: white;
+  color: white
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #636363;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #3d3d3d;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+
+</style>
+
+<body style="background-color:#262626">
+  <form style="border:1px solid #ccc">
+  <div class="container">
+    <h1 style="color:white">Create News</h1>
+    <p style="color:white">By creating an article on FalconNews, you agree to the <a style="text-decoration: underline; color:dodgerblue" href="tou.html" target="_blank" >Terms of Use</a>.</p>
+    <p style="color: white">All articles are automatically deleted after 10 days to preserve storage space.</p>
+    <hr>
+
+    <label style="color:white" for="name"><b>Article Tag</b></label>
+    <input maxlength="25" type="text" placeholder="Enter an ending for the URL..." name="name" id="name" required>
+    
+     <label style="color:white" for="title"><b>Article Headline</b></label>
+    <input type="text" placeholder="Enter the article title..." name="title" id="title" required>
+
+    <label style="color:white" for="uploader"><b>Article Uploader</b></label>
+    <input maxlength="30" type="text" placeholder="Enter your name..." name="uploader" id="uploader" required>
+
+    <label style="color:white" for="cover"><b>Article Cover Image</b></label>
+    <input type="text" placeholder="Enter an image URL..." name="cover" id="cover" required>
+    
+    <label style="color:white" for="content"><b>Article Content</b></label>
+    <textarea maxlength="10000" style="width: 100%; resize: vertical; font-family:'Red Hat Text'; padding: 15px; margin: 5px 0 22px 0; border: none; background: #303030; caret-color: white; color: white" placeholder="Enter article content..." name="content" id="content" required></textarea>
+  
+    <div class="clearfix">
+      <button type="button" onclick="create()" class="signupbtn">Upload Article</button>
+      <button id="myButton" type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </div>
+
+<script type="text/javascript">
+  document.getElementById("myButton").onclick = function () {
+      location.href = "https://falcon-news.netlify.app/index.html";
+  };
+</script>
+  
+  <script>
+    var regex = /^[0-9a-zA-Z]+$/;
+     var faunadb = window.faunadb
+  var q = faunadb.query
+  var client = new faunadb.Client({
+    secret: 'fnAEYeffB0AAyNqhrMHuazXpA_qOwFc5nMAZ7U53',
+    domain: 'db.eu.fauna.com',
+    scheme: 'https',
+  })
+ 
+  function makeid(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * 
+ charactersLength));
+   }
+   return result;
+}
+    
+function create(){
+      var objToday = new Date(),
+	weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
+	dayOfWeek = weekday[objToday.getDay()],
+	domEnder = function() { var a = objToday; if (/1/.test(parseInt((a + "").charAt(0)))) return "th"; a = parseInt((a + "").charAt(1)); return 1 == a ? "st" : 2 == a ? "nd" : 3 == a ? "rd" : "th" }(),
+	dayOfMonth = today + ( objToday.getDate() < 10) ? '0' + objToday.getDate() + domEnder : objToday.getDate() + domEnder,
+	months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'),
+	curMonth = months[objToday.getMonth()],
+	curYear = objToday.getFullYear();
+var today = dayOfWeek + " " + dayOfMonth + " " + curMonth + ", " + curYear;
+  
+client.query(
+  q.Get(
+    q.Match(q.Index('post_by_article'), document.getElementById("name").value)
+  )
+)
+.then((ret) => 
+      alert("This article tag is already taken!")
+
+)
+  
+.catch(function(e){
+    client.query(
+  q.Create(
+    q.Collection('falcon-posts'),
+    { data: { title: document.getElementById("name").value, creationdate: today, cover: document.getElementById("cover").value, titlereal: document.getElementById("title").value, uploader:  document.getElementById("uploader").value, contents: document.getElementById("content").value.replace(new RegExp('\n','g'), 'linebreak')} },
+  )
+)
+.then((ret) =>
+     
+     window.location.href = "https://falcon-news.netlify.app/article.html/?" + ret.data.title
+     )
+});
+
+
+}
+    </script>
+</body>
+
+</html>

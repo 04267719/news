@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/faunadb@latest/dist/faunadb.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Red+Hat+Text" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Bebas+Neue" rel="stylesheet">
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FalconNews - Search</title>
+</head>
+<style>
+
+  
+      @font-face {
+  font-family: 'Red Hat Text';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/redhattext/v6/RrQCbohi_ic6B3yVSzGBrMx6ZI_cy1A6Ok2ML7hwZr_QcLVF.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/bebasneue/v2/JTUSjIg69CK48gW7PXoo9Wdhyzbi.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+body {
+  font-family: "Red Hat Text";
+  font-weight: 400;
+  line-height: 1.6;
+  background-color: rgba(17,17,17,.04);
+  color: black;
+}
+
+h1 {
+  font-family: "Red Hat Text";
+  font-size: calc(1.60181rem + .67889 * ((100vw - 20rem)/ 113));
+  font-weight: 400;
+  letter-spacing: 0.02rem;
+  line-height: 1.2;
+}
+
+img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+main {
+ 
+  max-width: 1000px;
+  padding: 3rem 0 4rem;
+  margin: 2rem auto;
+
+}
+
+article {
+  max-width: 576px;
+  margin: 0 auto;
+  padding: 2rem;
+  overflow-wrap: break-word;
+  background-color: #edebeb;
+  border-radius: 20px;
+  overflow:hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+}
+  </style>
+  <body style="background-color:white">
+
+  </style>
+  <body onload="start()" style="background-color:white">
+
+    <style type="text/css">
+      .my_content_container a {
+          border-bottom: 4px solid #000000;
+          border-left: 4px solid #000000;
+          border-right: 4px solid #000000;
+          border-top: 4px solid #000000;
+          color: #000000;
+          display: block;
+          height: 1.5em;
+          padding: 0 1em;
+          width: 10em;       
+          text-decoration: none;}
+
+  return1 {
+    margin:auto;
+    display:block;}
+
+      </style>
+      
+      <div class="my_content_container">
+          <a href="index.html" style="text-align:center" class = return1>Return to Homepage</a>
+      </div>
+
+      <div style="text-align:center">
+        <br>
+          <label style="font-family:'Red Hat Text'; font-size:30px;"><b>Search For User's Articles</b></label><br><br>
+      <input style="border-radius:5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width:255px; height:27px; border:none; background-color:#e3e3e3" id="username" type="text">
+      <button style="border:none; border-radius:5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width:120px; background-color:#e3e3e3; height:29px; cursor:pointer; margin-left:15px" onclick="start()">Search</button><br><br>
+      </div>
+  <main>
+      
+    <label id="articles"></label>
+  </main>
+  <script>
+    var faunadb = window.faunadb
+  var q = faunadb.query
+  var client = new faunadb.Client({
+    secret: 'fnAEYeffB0AAyNqhrMHuazXpA_qOwFc5nMAZ7U53',
+    domain: 'db.eu.fauna.com',
+    scheme: 'https',
+  })
+
+function start(){
+
+    var segments = window.location.href.split('?')
+let name = document.getElementById("username").value
+let result = ""
+let amount = 0
+
+client.query(
+   q.Map(
+  q.Paginate(q.Documents(q.Collection('falcon-posts'))),
+  q.Lambda(x => q.Get(x))
+)).then (function(x){
+
+ for (var i = x.data.length - 1; i >= 0; i--) {
+     
+     
+     if(x.data[i].data.uploader != name)
+     {
+
+     }
+     else
+     {
+         
+         console.log( x.data[i].data.contents.split("linebreak")[0])
+         amount = amount + 1
+         result = result + "<article><header><label style=\"font-family:'Bebas Neue'; font-size:40px\">" + x.data[i].data.titlereal + "</label><br><br><img id=\"" + x.data[i].data.title + "\" onerror=\"document.getElementById('" + x.data[i].data.title + "').src='" + "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Question_mark_%28black%29.svg/200px-Question_mark_%28black%29.svg.png" + "'\" style=\"width:100px; height:100px; vertical-align:middle; margin-right:10px; float:left\" src=\"" + x.data[i].data.cover + "\"></div><label style=\"margin:left:100px; vertical-align:middle;\">" + x.data[i].data.contents.split("linebreak")[0] + "<br><b>" + "<a href=\"" + "https://falcon-news.netlify.app/article.html?" + x.data[i].data.title + "\">Read more</a>" + "</b></label></header></article><br><br>"
+         
+
+
+     }
+
+
+ }
+
+ if(amount < 2 && amount > 0)
+ {
+    amount = amount + " article"
+ }
+ else{
+
+amount = amount + " articles"
+ }
+document.getElementById("articles").innerHTML = "<div style=\"text-align:center\"><label style=\"font-family:'Red Hat Text'; font-size:20px;\"><b>Found " + amount + "</b></label></div><br>" + result
+                                   
+      })
+    
+
+
+    
+}
+</script>
+
+</body>
+
+</html>

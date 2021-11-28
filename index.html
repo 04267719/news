@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+ <html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>FalconNews - Home Page</title>
+        <meta name="description" content="FalconNews is the best news source platform for your needs. You can access latest news, and even post your own for others to see.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="main.css">
+        <!-- google fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+        <!-- fontawesome -->
+        <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/faunadb@latest/dist/faunadb.js"></script>
+
+    <style>
+
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 400;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKcg72j00.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+      }
+            
+            @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        src: url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+      }
+            
+            ::-webkit-scrollbar {
+        width: 10px;
+      }
+      
+       
+      ::-webkit-scrollbar-thumb {
+        background: #262626; 
+        border-radius: 5px;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: #2e2e2e; 
+      }
+
+</style> 
+</head>
+
+    <body onload="getrecentnews()">
+
+        <!-- header -->
+        <header>
+            <div class = "navigation-container">
+                <div class = "top-head">
+                    <div class = "web-name">
+                        <h1>FalconNews</h1>
+                    </div>
+
+                    <div class = "ham-btn">
+                        <span>
+                            <i class = "fas fa-bars"></i>
+                        </span>
+                    </div>
+
+                    <div class = "times-btn">
+                        <span>
+                            <i class = "fas fa-times"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- navigation bar -->
+
+                <div class = "nav-bar" id = "nav-bar">
+                    <nav>
+                        <ul>
+                            <li><a href = "#">Home</a></li>
+                            <li><a href = "sport.html">Sport</a></li>
+                            <li><a href = "weather.html">Weather</a></li>
+                            <li><a href = "credits.html">Credits</a></li>
+                            <li><a href = "search.html">Search</a></li>
+                            <li><a href = "tou.html">Terms of Use</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!--create news -->
+                <div class = "social-icons">
+                    <ul>
+                        <li>
+                        </li>
+                        <li>
+                        </li>
+                        <li>
+                        </li>
+                        <li>
+                            <li ><a href = "create.html" style="font-family:'Ubuntu'; color:#e6e6e6">CREATE NEWS</a></li>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+                <br>
+                <h1 style="font-family:'Ubuntu'; text-align:center">Welcome to FalconNews</h1>
+                <br>
+                <br>
+                <h3 style="font-family:'Ubuntu'; text-align:center">The best news source platform for your needs where you can even post your own news for others to see.</h3>
+                <br>
+            </div>
+        </section>
+        
+        <hr>
+
+        <main>
+            <section class = "main-container-left">
+                <h2>Top Stories</h2>
+                <div class = "container-top-left">
+                    <article>
+                        <img src = "bottom-left-3.webp">
+                        
+                        <div>
+                            <h3 style="font-family:'Ubuntu'; color:#ff0000">BREAKING NEWS:</h3><h3> CXG0 has died aged 16</h3>
+
+                            <p>CXGO has died in London after being shot by Munal. This comes after CXGO had confronted Munal, and claimed to be better than him at everything. CXGO's family are mourning the loss today.</p>
+
+                            <a href = "https://falcon-news.netlify.app/article?CXG0">Read More <span>>></span></a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class = "container-bottom-left">
+                    <article>
+                        <img src = "tiktok.png">
+                        <div>
+                            <h3>Students use TikTok to abuse teachers</h3>
+                            <p>Students in many schools have begun using the social media platform TikTok as a place to abuse teachers, and share content within school.</p>
+
+                            <a href = " https://falcon-news.netlify.app/article?tiktok-abuse">Read More <span>>></span></a>
+                        </div>
+                    </article>
+
+                    <article>
+                        <img src = "bottom-left-2.png">
+                        <div>
+                            <h3>Apple releases iPhone 69</h3>
+                            <p>Apple have just released their new iPhone priced at £69K - but it's exactly the same as the last one. We take a look at what the community has to think of this new release.</p>
+
+                            <a href = "https://falcon-news.netlify.app/article?iphone69">Read More <span>>></span></a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class = "main-container-right">
+                <h2>Latest Stories</h2>
+                
+                <article>
+                    <h4>TODAY</h4>
+                    <div>
+                        <h2 id="article0">Error - article not found</h2>
+
+                        <p id="description0"></p>
+
+                        <a id="href0" href = "#">Read More <span>>></span></a>
+                    </div>
+                </article>
+
+                <article>
+                    <h4>TODAY</h4>
+                    <div>
+                        <h2 id="article1">Error - article not found</h2>
+
+                        <p id="description1"></p>
+
+                        <a id="href1" href = "#">Read More <span>>></span></a>
+                    </div>
+                </article>
+
+                <article>
+                    <h4>YESTERDAY</h4>
+                    <div>
+                        <h2 id="article2">Error - article not found</h2>
+
+                        <p id="description2"></p>
+
+                        <a id="href2" href = "#">Read More <span>>></span></a>
+                    </div>
+                </article>
+
+                <article>
+                    <h4>3 DAYS AGO</h4>
+                    <div>
+                        <h2 id="article3">Error - article not found</h2>
+
+                        <p id="description3"></p>
+
+                        <a id="href3" href = "#">Read More <span>>></span></a>
+                    </div>
+                </article>
+
+                <article>
+                    <h4>3 DAYS AGO</h4>
+                    <div>
+                        <h2 id="article4">Error - article not found</h2>
+
+                        <p id="description4"></p>
+
+                        <a id="href4" href = "#">Read More <span>>></span></a>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <footer>
+                    <h2 style="color:#e6e6e6; text-align:center">FalconNews</h2>
+                    <p style="font-family:'Ubuntu'; color:#e6e6e6; text-align:center">FalconNews is the best news source platform for your needs. You can access latest news, and even post your own for others to see.</p>
+
+            <p>Copyright &copy; 2021 - FalconNews</p>
+        </footer>
+
+        <script src="script.js" async defer></script>
+        <script>
+            var faunadb = window.faunadb
+  var q = faunadb.query
+  var client = new faunadb.Client({
+    secret: 'fnAEYeffB0AAyNqhrMHuazXpA_qOwFc5nMAZ7U53',
+    domain: 'db.eu.fauna.com',
+    scheme: 'https',
+  })
+            function getrecentnews(){
+
+    
+                client.query(
+   q.Map(
+  q.Paginate(q.Documents(q.Collection('falcon-posts'))),
+  q.Lambda(x => q.Get(x))
+)).then (function(x){
+
+   document.getElementById("article0").innerHTML = x.data[x.data.length - 1].data.titlereal
+   document.getElementById("description0").innerHTML = x.data[x.data.length - 1].data.contents.split("linebreak")[0]
+   document.getElementById("href0").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 1].data.title
+   document.getElementById("article1").innerHTML = x.data[x.data.length - 2].data.titlereal
+   document.getElementById("description1").innerHTML = x.data[x.data.length - 2].data.contents.split("linebreak")[0]
+   document.getElementById("href1").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 2].data.title
+   document.getElementById("article2").innerHTML = x.data[x.data.length - 3].data.titlereal
+   document.getElementById("description2").innerHTML = x.data[x.data.length - 3].data.contents.split("linebreak")[0]
+   document.getElementById("href2").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 3].data.title
+   document.getElementById("article3").innerHTML = x.data[x.data.length - 4].data.titlereal
+   document.getElementById("description3").innerHTML = x.data[x.data.length - 4].data.contents.split("linebreak")[0]
+   document.getElementById("href3").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 4].data.title
+   document.getElementById("article4").innerHTML = x.data[x.data.length - 5].data.titlereal
+   document.getElementById("description4").innerHTML = x.data[x.data.length - 5].data.contents.split("linebreak")[0]
+   document.getElementById("href4").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 5].data.title
+
+  
+
+                                   
+      })
+
+
+            }
+        </script>
+    </body>
+</html>
