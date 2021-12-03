@@ -212,17 +212,6 @@
                         <a id="href4" href = "#">Read More <span>>></span></a>
                     </div>
                 </article>
-
-                <article>
-                    <h4>5 DAYS AGO</h4>
-                    <div>
-                        <h2 id="article4">Error - article not found</h2>
-
-                        <p id="description4"></p>
-
-                        <a id="href4" href = "#">Read More <span>>></span></a>
-                    </div>
-                </article>
             </section>
         </main>
 
@@ -265,13 +254,7 @@
    document.getElementById("href3").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 4].data.title
    document.getElementById("article4").innerHTML = x.data[x.data.length - 5].data.titlereal
    document.getElementById("description4").innerHTML = x.data[x.data.length - 5].data.contents.split("linebreak")[0]
-   document.getElementById("href4").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 5].data.title
-   document.getElementById("article5").innerHTML = x.data[x.data.length - 6].data.titlereal
-   document.getElementById("description5").innerHTML = x.data[x.data.length - 6].data.contents.split("linebreak")[0]
-   document.getElementById("href5").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 6].data.title
-  
-
-                                   
+   document.getElementById("href4").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 5].data.title                                  
       })
 
 
