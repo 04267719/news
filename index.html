@@ -123,7 +123,6 @@
 
                 <div class = "container-bottom-left">
                     <article>
-                        <img src = "https://wallpaperaccess.com/full/114310.jpg">
                         <div>
                             <h3 id="b-article1">Error - article not found</h3>
                             <p id="b-description1"></p>
@@ -133,7 +132,6 @@
                     </article>
 
                     <article>
-                        <img src = "https://wallpaperaccess.com/full/112717.jpg">
                         <div>
                             <h3 id="b-article2">Error - article not found</h3>
                             <p id="b-description2"></p>
@@ -267,12 +265,12 @@
    
 // BOTTOM-LEFT SECTION
 
-   document.getElementById("b-article1").innerHTML = x.data[x.data.length - Math.floor(Math.random() * 10) + 1].data.titlereal
-   document.getElementById("b-description1").innerHTML = x.data.contents.split("linebreak")[0]
-   document.getElementById("b-href1").href = "https://falcon-news.netlify.app/article?" +  x.data.title  
-   document.getElementById("b-article2").innerHTML = x.data[x.data.length - 10].data.titlereal
-   document.getElementById("b-description2").innerHTML = x.data[x.data.length - 10].data.contents.split("linebreak")[0]
-   document.getElementById("b-href2").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 10].data.title       
+   document.getElementById("b-article1").innerHTML = x.data[x.data.length - 10].data.titlereal
+   document.getElementById("b-description1").innerHTML = x.data[x.data.length - 10].data.contents.split("linebreak")[0]
+   document.getElementById("b-href1").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 10].data.title  
+   document.getElementById("b-article2").innerHTML = x.data[x.data.length - 11].data.titlereal
+   document.getElementById("b-description2").innerHTML = x.data[x.data.length - 11].data.contents.split("linebreak")[0]
+   document.getElementById("b-href2").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 11].data.title       
       })
 
 
