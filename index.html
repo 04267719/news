@@ -136,20 +136,20 @@
                     <article>
                         <img src = "tiktok.png">
                         <div>
-                            <h3>Students use TikTok to abuse teachers</h3>
-                            <p>Students in many schools have begun using the social media platform TikTok as a place to abuse teachers, and share content within school.</p>
+                            <h3 id="b-article1">Students use TikTok to abuse teachers</h3>
+                            <p id="b-description1">Students in many schools have begun using the social media platform TikTok as a place to abuse teachers, and share content within school.</p>
 
-                            <a href = " https://falcon-news.netlify.app/article?tiktok-abuse">Read More <span>>></span></a>
+                            <a id="b-href1" href = " https://falcon-news.netlify.app/article?tiktok-abuse">Read More <span>>></span></a>
                         </div>
                     </article>
 
                     <article>
                         <img src = "bottom-left-2.png">
                         <div>
-                            <h3>Apple releases iPhone 69</h3>
-                            <p>Apple have just released their new iPhone priced at £69K - but it's exactly the same as the last one. We take a look at what the community has to think of this new release.</p>
+                            <h3 id="b-article2">Apple releases iPhone 69</h3>
+                            <p id="b-description2">Apple have just released their new iPhone priced at £69K - but it's exactly the same as the last one. We take a look at what the community has to think of this new release.</p>
 
-                            <a href = "https://falcon-news.netlify.app/article?iphone69">Read More <span>>></span></a>
+                            <a id="b-href2" href = "https://falcon-news.netlify.app/article?iphone69">Read More <span>>></span></a>
                         </div>
                     </article>
                 </div>
@@ -268,7 +268,16 @@
    document.getElementById("href4").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 5].data.title    
    document.getElementById("article5").innerHTML = x.data[x.data.length - 6].data.titlereal
    document.getElementById("description5").innerHTML = x.data[x.data.length - 6].data.contents.split("linebreak")[0]
-   document.getElementById("href5").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 6].data.title                                
+   document.getElementById("href5").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 6].data.title         
+   
+// BOTTOM-LEFT SECTION
+
+   document.getElementById("b-article1").innerHTML = x.data[x.data.length - 1].data.titlereal
+   document.getElementById("b-description1").innerHTML = x.data[x.data.length - 1].data.contents.split("linebreak")[0]
+   document.getElementById("b-href1").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 1].data.title    
+   document.getElementById("b-article2").innerHTML = x.data[x.data.length - 2].data.titlereal
+   document.getElementById("b-description2").innerHTML = x.data[x.data.length - 2].data.contents.split("linebreak")[0]
+   document.getElementById("b-href2").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 2].data.title       
       })
 
 
