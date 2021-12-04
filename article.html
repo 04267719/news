@@ -164,15 +164,15 @@ client.query(
    let title1 = x.data[x.data.length - 1].data.titlereal
    let title2 = x.data[x.data.length - 2].data.titlereal
    let title3 = x.data[x.data.length - 3].data.titlereal
-  if(title1.length > 30)
+  if(title1.length > 25)
   {
     title1 = x.data[x.data.length - 1].data.titlereal.substring(0, 27) + "..."
   }
-  if(title2.length > 30)
+  if(title2.length > 25)
   {
     title2 = x.data[x.data.length - 2].data.titlereal.substring(0, 27) + "..."
   }
-  if(title3.length > 30)
+  if(title3.length > 25)
   {
     title3 = x.data[x.data.length - 3].data.titlereal.substring(0, 27) + "..."
   }
