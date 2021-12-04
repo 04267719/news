@@ -134,7 +134,7 @@
 
                 <div class = "container-bottom-left">
                     <article>
-                        <img src = "tiktok.png">
+                        <img id="b-image1" src = "https://wallpapercave.com/wp/wp7058717.jpg">
                         <div>
                             <h3 id="b-article1">Error - article not found</h3>
                             <p id="b-description1"></p>
@@ -144,7 +144,7 @@
                     </article>
 
                     <article>
-                        <img src = "bottom-left-2.png">
+                        <img id="b-image2" src = "https://wallpapercave.com/wp/wp7058717.jpg">
                         <div>
                             <h3 id="b-article2">Error - article not found</h3>
                             <p id="b-description2"></p>
@@ -159,7 +159,7 @@
                 <h2>Latest Stories</h2>
                 
                 <article>
-                    <h4 id="creationdate0">TODAY</h4>
+                    <h4 style="font-family:'Ubuntu';" id="creationdate0">TODAY</h4>
                     <div>
                         <h2 id="article0">Error - article not found</h2>
 
@@ -170,7 +170,7 @@
                 </article>
 
                 <article>
-                    <h4 id="creationdate1">YESTERDAY</h4>
+                    <h4 style="font-family:'Ubuntu';" id="creationdate1">YESTERDAY</h4>
                     <div>
                         <h2 id="article1">Error - article not found</h2>
 
@@ -181,7 +181,7 @@
                 </article>
 
                 <article>
-                    <h4 id="creationdate2">YESTERDAY</h4>
+                    <h4 style="font-family:'Ubuntu';" id="creationdate2">YESTERDAY</h4>
                     <div>
                         <h2 id="article2">Error - article not found</h2>
 
@@ -192,7 +192,7 @@
                 </article>
 
                 <article>
-                    <h4 id="creationdate3">3 DAYS AGO</h4>
+                    <h4 style="font-family:'Ubuntu';" id="creationdate3">3 DAYS AGO</h4>
                     <div>
                         <h2 id="article3">Error - article not found</h2>
 
@@ -203,7 +203,7 @@
                 </article>
 
                 <article>
-                    <h4 id="creationdate4">3 DAYS AGO</h4>
+                    <h4 style="font-family:'Ubuntu';" id="creationdate4">3 DAYS AGO</h4>
                     <div>
                         <h2 id="article4">Error - article not found</h2>
 
@@ -214,7 +214,7 @@
                 </article>
 
                 <article>
-                    <h4 id="creationdate5">5 DAYS AGO</h4>
+                    <h4 style="font-family:'Ubuntu';" id="creationdate5">5 DAYS AGO</h4>
                     <div>
                         <h2 id="article5">Error - article not found</h2>
 
@@ -278,9 +278,11 @@
    
 // BOTTOM-LEFT SECTION
 
+   document.getElementById("b-image1").innerHTML = x.data[x.data.length - 9].data.cover
    document.getElementById("b-article1").innerHTML = x.data[x.data.length - 9].data.titlereal
    document.getElementById("b-description1").innerHTML = x.data[x.data.length - 9].data.contents.split("linebreak")[0]
-   document.getElementById("b-href1").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 9].data.title    
+   document.getElementById("b-href1").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 9].data.title  
+   document.getElementById("b-image2").innerHTML = x.data[x.data.length - 10].data.cover  
    document.getElementById("b-article2").innerHTML = x.data[x.data.length - 10].data.titlereal
    document.getElementById("b-description2").innerHTML = x.data[x.data.length - 10].data.contents.split("linebreak")[0]
    document.getElementById("b-href2").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 10].data.title       
