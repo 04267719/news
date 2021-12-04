@@ -267,9 +267,9 @@
    
 // BOTTOM-LEFT SECTION
 
-   document.getElementById("b-article1").innerHTML = x.data[x.data.length - 9].data.titlereal
-   document.getElementById("b-description1").innerHTML = x.data[x.data.length - 9].data.contents.split("linebreak")[0]
-   document.getElementById("b-href1").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 9].data.title  
+   document.getElementById("b-article1").innerHTML = x.data[x.data.length - Math.floor(Math.random() * 10) + 1].data.titlereal
+   document.getElementById("b-description1").innerHTML = x.data.contents.split("linebreak")[0]
+   document.getElementById("b-href1").href = "https://falcon-news.netlify.app/article?" +  x.data.title  
    document.getElementById("b-article2").innerHTML = x.data[x.data.length - 10].data.titlereal
    document.getElementById("b-description2").innerHTML = x.data[x.data.length - 10].data.contents.split("linebreak")[0]
    document.getElementById("b-href2").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 10].data.title       
