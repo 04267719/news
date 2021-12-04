@@ -114,11 +114,11 @@ article {
     <article>
       <header>
        <label style="font-family:'Bebas Neue'; font-size:40px" id="title">Recent Articles</label><br><br>
-       <img id="firstimage" onerror="document.getElementById('firstimage').src='https://static.thenounproject.com/png/2009949-200.png'" style="width:100px; height:100px; vertical-align:middle" src="https://static.thenounproject.com/png/2009949-200.png">
+       <img id="firstimage" onerror="document.getElementById('firstimage').src='https://static.thenounproject.com/png/2009949-200.png'" style="width:700px; height:500px; vertical-align:middle" src="https://static.thenounproject.com/png/2009949-200.png">
        <label id="firstpost" style="margin-left:10px"> Oops, we couldn't find any recent articles!</label><br><br>
-       <img id="secondimage" onerror="document.getElementById('secondimage').src='https://static.thenounproject.com/png/2009949-200.png'" style="width:100px; height:100px; vertical-align:middle" src="https://static.thenounproject.com/png/2009949-200.png">
+       <img id="secondimage" onerror="document.getElementById('secondimage').src='https://static.thenounproject.com/png/2009949-200.png'" style="width:700px; height:500px; vertical-align:middle" src="https://static.thenounproject.com/png/2009949-200.png">
        <label id="secondpost" style="margin-left:10px"> Oops, we couldn't find any recent articles!</label><br><br>
-       <img id="thirdimage" onerror="document.getElementById('thirdimage').src='https://static.thenounproject.com/png/2009949-200.png'" style="width:100px; height:100px; vertical-align:middle" src="https://static.thenounproject.com/png/2009949-200.png">
+       <img id="thirdimage" onerror="document.getElementById('thirdimage').src='https://static.thenounproject.com/png/2009949-200.png'" style="width:700px; height:500px; vertical-align:middle" src="https://static.thenounproject.com/png/2009949-200.png">
        <label id="thirdpost" style="margin-left:10px"> Oops, we couldn't find any recent articles!</label>
      </header>
    </article> 
@@ -180,17 +180,17 @@ client.query(
   let name1 = x.data[x.data.length - 1].data.uploader
    let name2 = x.data[x.data.length - 2].data.uploader
    let name3 = x.data[x.data.length - 3].data.uploader
-  if(name1.length > 15)
+  if(name1.length > 20)
   {
-    name1 = x.data[x.data.length - 1].data.uploader.substring(0, 12) + "..."
+    name1 = x.data[x.data.length - 1].data.uploader.substring(0, 17) + "..."
   }
-  if(name2.length > 15)
+  if(name2.length > 20)
   {
-    name2 = x.data[x.data.length - 2].data.uploader.substring(0, 12) + "..."
+    name2 = x.data[x.data.length - 2].data.uploader.substring(0, 17) + "..."
   }
-  if(name3.length > 15)
+  if(name3.length > 20)
   {
-    name3 = x.data[x.data.length - 3].data.uploader.substring(0, 12) + "..."
+    name3 = x.data[x.data.length - 3].data.uploader.substring(0, 17) + "..."
   }
   
 
