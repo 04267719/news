@@ -103,7 +103,7 @@ article {
         </div>
         <label style="font-family:'Bebas Neue'; font-size:40px" id="title">Oops, we couldn't find that article!</label><br><br>
       </header>
-        <img id="cover" onerror="document.getElementById('cover').src='https://wallpapercave.com/wp/wp7058717.jpg'" src="a"/><br><br>
+        <img id="cover" onerror="document.getElementById('cover').src='https://i.pinimg.com/originals/70/fc/0c/70fc0c9846423ccf3ff8506fd9268233.jpg'" src="a"/><br><br>
       <div>
         <label id="content"></label>
       </div>
@@ -114,11 +114,11 @@ article {
     <article>
       <header>
        <label style="font-family:'Bebas Neue'; font-size:40px" id="title">Recent Articles</label><br><br>
-       <img id="firstimage" onerror="document.getElementById('firstimage').src='https://images-eu.ssl-images-amazon.com/images/I/91-kPSv2efL.png'" style="width:100px; height:100px; vertical-align:middle" src="https://images-eu.ssl-images-amazon.com/images/I/91-kPSv2efL.png">
+       <img id="firstimage" onerror="document.getElementById('firstimage').src='https://static.thenounproject.com/png/2009949-200.png'" style="width:100px; height:100px; vertical-align:middle" src="https://static.thenounproject.com/png/2009949-200.png">
        <label id="firstpost" style="margin-left:10px"> Oops, we couldn't find any recent articles!</label><br><br>
-       <img id="secondimage" onerror="document.getElementById('secondimage').src='https://images-eu.ssl-images-amazon.com/images/I/91-kPSv2efL.png'" style="width:100px; height:100px; vertical-align:middle" src="https://images-eu.ssl-images-amazon.com/images/I/91-kPSv2efL.png">
+       <img id="secondimage" onerror="document.getElementById('secondimage').src='https://static.thenounproject.com/png/2009949-200.png'" style="width:100px; height:100px; vertical-align:middle" src="https://static.thenounproject.com/png/2009949-200.png">
        <label id="secondpost" style="margin-left:10px"> Oops, we couldn't find any recent articles!</label><br><br>
-       <img id="thirdimage" onerror="document.getElementById('thirdimage').src='https://images-eu.ssl-images-amazon.com/images/I/91-kPSv2efL.png'" style="width:100px; height:100px; vertical-align:middle" src="https://images-eu.ssl-images-amazon.com/images/I/91-kPSv2efL.png">
+       <img id="thirdimage" onerror="document.getElementById('thirdimage').src='https://static.thenounproject.com/png/2009949-200.png'" style="width:100px; height:100px; vertical-align:middle" src="https://static.thenounproject.com/png/2009949-200.png">
        <label id="thirdpost" style="margin-left:10px"> Oops, we couldn't find any recent articles!</label>
      </header>
    </article> 
@@ -148,7 +148,7 @@ client.query(
     document.getElementById("content").innerHTML = ret.data.contents.replace(/linebreak/g, "<br>") + "<br>"
     document.getElementById("title").innerHTML = "<b>" + ret.data.titlereal + "</b>"
     document.getElementById("author").innerHTML =  "Published on <i><b>" + ret.data.creationdate + "</b></i><br>Written by <i><b>" + ret.data.uploader + "</b></i>"
-     document.getElementById("cover").src = ret.data.cover
+    document.getElementById("cover").src = ret.data.cover
   })
 .catch(function(e){
     console.log(e)
