@@ -272,9 +272,9 @@
    
 // BOTTOM-LEFT SECTION
 
-   document.getElementById("b-article1").innerHTML = x.data[x.data.length - 1].data.titlereal
-   document.getElementById("b-description1").innerHTML = x.data[x.data.length - 1].data.contents.split("linebreak")[0]
-   document.getElementById("b-href1").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 1].data.title    
+   document.getElementById("b-article1").innerHTML = x.data.data.titlereal
+   document.getElementById("b-description1").innerHTML = x.data.data.contents.split("linebreak")[0]
+   document.getElementById("b-href1").href = "https://falcon-news.netlify.app/article?" +  x.data.data.title    
    document.getElementById("b-article2").innerHTML = x.data[x.data.length - 2].data.titlereal
    document.getElementById("b-description2").innerHTML = x.data[x.data.length - 2].data.contents.split("linebreak")[0]
    document.getElementById("b-href2").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 2].data.title       
