@@ -136,20 +136,20 @@
                     <article>
                         <img src = "tiktok.png">
                         <div>
-                            <h3 id="b-article1">Students use TikTok to abuse teachers</h3>
-                            <p id="b-description1">Students in many schools have begun using the social media platform TikTok as a place to abuse teachers, and share content within school.</p>
+                            <h3 id="b-article1">Error - article not found</h3>
+                            <p id="b-description1"></p>
 
-                            <a id="b-href1" href = " https://falcon-news.netlify.app/article?tiktok-abuse">Read More <span>>></span></a>
+                            <a id="b-href1" href = "#">Read More <span>>></span></a>
                         </div>
                     </article>
 
                     <article>
                         <img src = "bottom-left-2.png">
                         <div>
-                            <h3 id="b-article2">Apple releases iPhone 69</h3>
-                            <p id="b-description2">Apple have just released their new iPhone priced at £69K - but it's exactly the same as the last one. We take a look at what the community has to think of this new release.</p>
+                            <h3 id="b-article2">Error - article not found</h3>
+                            <p id="b-description2"></p>
 
-                            <a id="b-href2" href = "https://falcon-news.netlify.app/article?iphone69">Read More <span>>></span></a>
+                            <a id="b-href2" href = "#">Read More <span>>></span></a>
                         </div>
                     </article>
                 </div>
@@ -159,7 +159,7 @@
                 <h2>Latest Stories</h2>
                 
                 <article>
-                    <h4>TODAY</h4>
+                    <h4 id="creationdate0">TODAY</h4>
                     <div>
                         <h2 id="article0">Error - article not found</h2>
 
@@ -170,7 +170,7 @@
                 </article>
 
                 <article>
-                    <h4>YESTERDAY</h4>
+                    <h4 id="creationdate1">YESTERDAY</h4>
                     <div>
                         <h2 id="article1">Error - article not found</h2>
 
@@ -181,7 +181,7 @@
                 </article>
 
                 <article>
-                    <h4>YESTERDAY</h4>
+                    <h4 id="creationdate2">YESTERDAY</h4>
                     <div>
                         <h2 id="article2">Error - article not found</h2>
 
@@ -192,7 +192,7 @@
                 </article>
 
                 <article>
-                    <h4>3 DAYS AGO</h4>
+                    <h4 id="creationdate3">3 DAYS AGO</h4>
                     <div>
                         <h2 id="article3">Error - article not found</h2>
 
@@ -203,7 +203,7 @@
                 </article>
 
                 <article>
-                    <h4>3 DAYS AGO</h4>
+                    <h4 id="creationdate4">3 DAYS AGO</h4>
                     <div>
                         <h2 id="article4">Error - article not found</h2>
 
@@ -214,7 +214,7 @@
                 </article>
 
                 <article>
-                    <h4>5 DAYS AGO</h4>
+                    <h4 id="creationdate5">5 DAYS AGO</h4>
                     <div>
                         <h2 id="article5">Error - article not found</h2>
 
@@ -251,33 +251,39 @@
   q.Lambda(x => q.Get(x))
 )).then (function(x){
 
+   document.getElementById("creationdate0").innerHTML = x.data[x.data.length - 1].data.creationdate
    document.getElementById("article0").innerHTML = x.data[x.data.length - 1].data.titlereal
    document.getElementById("description0").innerHTML = x.data[x.data.length - 1].data.contents.split("linebreak")[0]
    document.getElementById("href0").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 1].data.title
+   document.getElementById("creationdate1").innerHTML = x.data[x.data.length - 2].data.creationdate
    document.getElementById("article1").innerHTML = x.data[x.data.length - 2].data.titlereal
    document.getElementById("description1").innerHTML = x.data[x.data.length - 2].data.contents.split("linebreak")[0]
    document.getElementById("href1").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 2].data.title
+   document.getElementById("creationdate2").innerHTML = x.data[x.data.length - 3].data.creationdate
    document.getElementById("article2").innerHTML = x.data[x.data.length - 3].data.titlereal
    document.getElementById("description2").innerHTML = x.data[x.data.length - 3].data.contents.split("linebreak")[0]
    document.getElementById("href2").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 3].data.title
+   document.getElementById("creationdate3").innerHTML = x.data[x.data.length - 4].data.creationdate
    document.getElementById("article3").innerHTML = x.data[x.data.length - 4].data.titlereal
    document.getElementById("description3").innerHTML = x.data[x.data.length - 4].data.contents.split("linebreak")[0]
    document.getElementById("href3").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 4].data.title
+   document.getElementById("creationdate4").innerHTML = x.data[x.data.length - 5].data.creationdate
    document.getElementById("article4").innerHTML = x.data[x.data.length - 5].data.titlereal
    document.getElementById("description4").innerHTML = x.data[x.data.length - 5].data.contents.split("linebreak")[0]
-   document.getElementById("href4").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 5].data.title    
+   document.getElementById("href4").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 5].data.title
+   document.getElementById("creationdate5").innerHTML = x.data[x.data.length - 6].data.creationdate  
    document.getElementById("article5").innerHTML = x.data[x.data.length - 6].data.titlereal
    document.getElementById("description5").innerHTML = x.data[x.data.length - 6].data.contents.split("linebreak")[0]
    document.getElementById("href5").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 6].data.title         
    
 // BOTTOM-LEFT SECTION
 
-   document.getElementById("b-article1").innerHTML = x.data[x.data.length - Math.floor(Math.random() * 10) + 1].data.titlereal
-   document.getElementById("b-description1").innerHTML = x.data[x.data.length - Math.floor(Math.random() * 10) + 1].data.contents.split("linebreak")[0]
-   document.getElementById("b-href1").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - Math.floor(Math.random() * 10) + 1].data.title    
-   document.getElementById("b-article2").innerHTML = x.data[x.data.length - Math.floor(Math.random() * 10) + 1].data.titlereal
-   document.getElementById("b-description2").innerHTML = x.data[x.data.length - Math.floor(Math.random() * 10) + 1].data.contents.split("linebreak")[0]
-   document.getElementById("b-href2").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - Math.floor(Math.random() * 10) + 1].data.title       
+   document.getElementById("b-article1").innerHTML = x.data[x.data.length - 9].data.titlereal
+   document.getElementById("b-description1").innerHTML = x.data[x.data.length - 9].data.contents.split("linebreak")[0]
+   document.getElementById("b-href1").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 9].data.title    
+   document.getElementById("b-article2").innerHTML = x.data[x.data.length - 10].data.titlereal
+   document.getElementById("b-description2").innerHTML = x.data[x.data.length - 10].data.contents.split("linebreak")[0]
+   document.getElementById("b-href2").href = "https://falcon-news.netlify.app/article?" +  x.data[x.data.length - 10].data.title       
       })
 
 
