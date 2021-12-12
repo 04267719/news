@@ -89,6 +89,15 @@ button:hover {
   width: 50%;
 }
 
+.tacbox {
+  display:block;
+  padding: 1em;
+  margin: 2em;
+  border: 3px solid #ddd;
+  background-color: #eee;
+  max-width: 800px;
+}
+
 /* Add padding to container elements */
 .container {
   padding: 16px;
@@ -130,7 +139,12 @@ button:hover {
     <input type="text" placeholder="Enter an image URL..." name="cover" id="cover" required>
     
     <label style="color:white" for="content"><b>Article Content</b></label>
-    <textarea maxlength="10000" style="width: 100%; resize: vertical; font-family:'Red Hat Text'; padding: 15px; margin: 5px 0 22px 0; border: none; background: #303030; caret-color: white; color: white" placeholder="Enter article content..." name="content" id="content" REQUIRED></textarea>
+    <textarea maxlength="10000" style="width: 100%; resize: vertical; font-family:'Red Hat Text'; padding: 15px; margin: 5px 0 22px 0; border: none; background: #303030; caret-color: white; color: white" placeholder="Enter article content..." name="content" id="content" required></textarea>
+
+    <div class="tacbox">
+      <input id="checkbox" type="checkbox" required />
+      <label for="checkbox"> I accept the <a href="tou.html">Terms of Use</a>.</label>
+    </div>
   
     <div class="clearfix">
       <button type="button" onclick="create()" class="signupbtn">Upload Article</button>
