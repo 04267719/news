@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css?family=Red+Hat+Text" rel="stylesheet">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FalconNews - Create News</title>
+  <title>FalconNews - Create Article</title>
 </head>
   <style>
 
@@ -115,23 +115,22 @@ button:hover {
   <div class="container">
     <h1 style="color:white">Create News</h1>
     <p style="color:white">By creating an article on FalconNews, you agree to the <a style="text-decoration: underline; color:dodgerblue" href="tou.html" target="_blank" >Terms of Use</a>.</p>
-    <p style="color: white">All articles are automatically deleted after 10 days to preserve storage space.</p>
     <hr>
 
     <label style="color:white" for="name"><b>Article Tag</b></label>
-    <input maxlength="25" type="text" placeholder="Enter an ending for the URL..." name="name" id="name" required>
+    <input maxlength="30" type="text" placeholder="Enter an ending for the article URL..." name="name" id="name" REQUIRED>
     
      <label style="color:white" for="title"><b>Article Headline</b></label>
-    <input type="text" placeholder="Enter the article title..." name="title" id="title" required>
+    <input maxlength="100" type="text" placeholder="Enter the article title..." name="title" id="title" REQUIRED>
 
     <label style="color:white" for="uploader"><b>Article Uploader</b></label>
-    <input maxlength="30" type="text" placeholder="Enter your name..." name="uploader" id="uploader" required>
+    <input maxlength="30" type="text" placeholder="Enter your name..." name="uploader" id="uploader" REQUIRED>
 
     <label style="color:white" for="cover"><b>Article Cover Image</b></label>
-    <input type="text" placeholder="Enter an image URL..." name="cover" id="cover" required>
+    <input type="url" placeholder="Enter an image URL..." name="cover" id="cover" REQUIRED>
     
     <label style="color:white" for="content"><b>Article Content</b></label>
-    <textarea maxlength="10000" style="width: 100%; resize: vertical; font-family:'Red Hat Text'; padding: 15px; margin: 5px 0 22px 0; border: none; background: #303030; caret-color: white; color: white" placeholder="Enter article content..." name="content" id="content" required></textarea>
+    <textarea maxlength="10000" style="width: 100%; resize: vertical; font-family:'Red Hat Text'; padding: 15px; margin: 5px 0 22px 0; border: none; background: #303030; caret-color: white; color: white" placeholder="Enter article content..." name="content" id="content" REQUIRED></textarea>
   
     <div class="clearfix">
       <button type="button" onclick="create()" class="signupbtn">Upload Article</button>

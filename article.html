@@ -103,7 +103,7 @@ article {
         </div>
         <label style="font-family:'Bebas Neue'; font-size:40px" id="title">Oops, we couldn't find that article!</label><br><br>
       </header>
-        <img id="cover" onerror="document.getElementById('cover').src='https://i.pinimg.com/originals/70/fc/0c/70fc0c9846423ccf3ff8506fd9268233.jpg'" src="a"/><br><br>
+        <img id="cover" onerror="document.getElementById('cover').src='https://i.pinimg.com/originals/70/fc/0c/70fc0c9846423ccf3ff8506fd9268233.jpg'" src=""/><br><br>
       <div>
         <label id="content"></label>
       </div>
@@ -144,7 +144,6 @@ client.query(
   )
 )
 .then(function(ret){
-    document.title = ret.data.titlereal + " by " + ret.data.uploader
     document.getElementById("content").innerHTML = ret.data.contents.replace(/linebreak/g, "<br>") + "<br>"
     document.getElementById("title").innerHTML = "<b>" + ret.data.titlereal + "</b>"
     document.getElementById("author").innerHTML =  "Published on <i><b>" + ret.data.creationdate + "</b></i><br>Written by <i><b>" + ret.data.uploader + "</b></i>"
@@ -164,17 +163,17 @@ client.query(
    let title1 = x.data[x.data.length - 1].data.titlereal
    let title2 = x.data[x.data.length - 2].data.titlereal
    let title3 = x.data[x.data.length - 3].data.titlereal
-  if(title1.length > 25)
+  if(title1.length > 30)
   {
-    title1 = x.data[x.data.length - 1].data.titlereal.substring(0, 27) + "..."
+    title1 = x.data[x.data.length - 1].data.titlereal.substring(0, 33) + "..."
   }
-  if(title2.length > 25)
+  if(title2.length > 30)
   {
-    title2 = x.data[x.data.length - 2].data.titlereal.substring(0, 27) + "..."
+    title2 = x.data[x.data.length - 2].data.titlereal.substring(0, 33) + "..."
   }
-  if(title3.length > 25)
+  if(title3.length > 30)
   {
-    title3 = x.data[x.data.length - 3].data.titlereal.substring(0, 27) + "..."
+    title3 = x.data[x.data.length - 3].data.titlereal.substring(0, 33) + "..."
   }
 
   let name1 = x.data[x.data.length - 1].data.uploader
