@@ -89,15 +89,6 @@ button:hover {
   width: 50%;
 }
 
-.tacbox {
-  display:block;
-  padding: 1em;
-  margin: 2em;
-  border: 3px solid #ddd;
-  background-color: #eee;
-  max-width: 800px;
-}
-
 /* Add padding to container elements */
 .container {
   padding: 16px;
@@ -119,7 +110,7 @@ button:hover {
 
 </style>
 
-<body style="background-color:#262626">
+<body style="background-color:#262626" action="">
   <form style="border:1px solid #ccc">
   <div class="container">
     <h1 style="color:white">Create News</h1>
@@ -141,21 +132,20 @@ button:hover {
     <label style="color:white" for="content"><b>Article Content</b></label>
     <textarea maxlength="10000" style="width: 100%; resize: vertical; font-family:'Red Hat Text'; padding: 15px; margin: 5px 0 22px 0; border: none; background: #303030; caret-color: white; color: white" placeholder="Enter article content..." name="content" id="content" required></textarea>
 
-    <div class="tacbox">
-      <input id="checkbox" type="checkbox" required='required'/>
-      <label for="checkbox"> I accept the <a href="tou.html">Terms of Use</a>.</label>
-    </div>
-  
+    <input type="checkbox" id="checkbox" name="checkbox"/>
+    <label style="color:white" for="checkbox"> I accept the <a href="tou.html">Terms of Use</a>.</label>
+
     <div class="clearfix">
       <button type="button" onclick="create()" class="signupbtn">Upload Article</button>
       <button id="myButton" type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
     </div>
   </div>
+  </form>
 
 <script type="text/javascript">
   document.getElementById("myButton").onclick = function () {
-      location.href = "https://falcon-news.netlify.app/index.html";
-  };
+      location.href = "https://falcon-news.netlify.app/index.html";};
+  document.getElementById("checkbox").required = true;
 </script>
   
   <script>
