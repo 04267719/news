@@ -109,8 +109,8 @@ button:hover {
 
 </style>
 
-<body style="background-color:#262626" action="">
-  <form style="border:1px solid #ccc">
+<body style="background-color:#262626">
+  <form name= "articleForm" style="border:1px solid #ccc" action="">
   <div class="container">
     <h1 style="color:white">Create News</h1>
     <p style="color:white">By creating an article on FalconNews, you agree to the <a style="text-decoration: underline; color:dodgerblue" href="tou.html" target="_blank" >Terms of Use</a>.</p>
@@ -142,6 +142,14 @@ button:hover {
 <script type="text/javascript">
   document.getElementById("myButton").onclick = function () {
       location.href = "https://falcon-news.netlify.app/index.html";};
+
+      function validateForm() {
+  var x = document.forms["articleForm"]["name"]["title"]["uploader"]["cover"]["content"].value;
+  if (x == "") {
+    alert("All fields must be filled out!");
+    return false;
+  }
+}
 </script>
   
   <script>
