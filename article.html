@@ -144,9 +144,9 @@ client.query(
   )
 )
 .then(function(ret){
-    document.getElementById("content").textContent = ret.data.contents.replace(/linebreak/g, "<br>") + "<br>"
-    document.getElementById("title").textContent = "<b>" + ret.data.titlereal + "</b>"
-    document.getElementById("author").textContent =  "Published on <i><b>" + ret.data.creationdate + "</b></i><br>Written by <i><b>" + ret.data.uploader + "</b></i>"
+    document.getElementById("content").innerHTML = ret.data.contents.replace(/linebreak/g, "<br>") + "<br>"
+    document.getElementById("title").innerHTML = "<b>" + ret.data.titlereal + "</b>"
+    document.getElementById("author").innerHTML =  "Published on <i><b>" + ret.data.creationdate + "</b></i><br>Written by <i><b>" + ret.data.uploader + "</b></i>"
     document.getElementById("cover").src = ret.data.cover
   })
 .catch(function(e){
@@ -194,13 +194,13 @@ client.query(
   
 
 
-      document.getElementById("firstpost").textContent = "<b><a style=\"color:black\" href=\"https://falcon-news.netlify.app/article.html/?" + x.data[x.data.length - 1].data.title + "\">" + title1 + "</a>" + "</b> by <i>" + name1 + "</i>"
+      document.getElementById("firstpost").innerHTML = "<b><a style=\"color:black\" href=\"https://falcon-news.netlify.app/article.html/?" + x.data[x.data.length - 1].data.title + "\">" + title1 + "</a>" + "</b> by <i>" + name1 + "</i>"
       document.getElementById("firstimage").src = x.data[x.data.length - 1].data.cover
 
-      document.getElementById("secondpost").textContent = "<b><a style=\"color:black\" href=\"https://falcon-news.netlify.app/article.html/?" + x.data[x.data.length - 2].data.title + "\">" + title2 + "</a>" + "</b> by <i>" + name2 + "</i>"
+      document.getElementById("secondpost").innerHTML = "<b><a style=\"color:black\" href=\"https://falcon-news.netlify.app/article.html/?" + x.data[x.data.length - 2].data.title + "\">" + title2 + "</a>" + "</b> by <i>" + name2 + "</i>"
       document.getElementById("secondimage").src = x.data[x.data.length - 2].data.cover
 
-      document.getElementById("thirdpost").textContent = "<b><a style=\"color:black\" href=\"https://falcon-news.netlify.app/article.html/?" + x.data[x.data.length - 3].data.title + "\">" + title3 + "</a>" + "</b> by <i>" + name3 + "</i>"
+      document.getElementById("thirdpost").innerHTML = "<b><a style=\"color:black\" href=\"https://falcon-news.netlify.app/article.html/?" + x.data[x.data.length - 3].data.title + "\">" + title3 + "</a>" + "</b> by <i>" + name3 + "</i>"
       document.getElementById("thirdimage").src = x.data[x.data.length - 3].data.cover
 
                                    
