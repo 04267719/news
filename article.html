@@ -144,9 +144,9 @@ client.query(
   )
 )
 .then(function(ret){
-    document.getElementById("content").innerHTML = ret.data.contents.replace(/linebreak/g, "<br>") + "<br>"
-    document.getElementById("title").innerHTML = "<b>" + ret.data.titlereal + "</b>"
-    document.getElementById("author").innerHTML =  "Published on <i><b>" + ret.data.creationdate + "</b></i><br>Written by <i><b>" + ret.data.uploader + "</b></i>"
+    document.getElementById("content").textContent = ret.data.contents.replace(/linebreak/g, "<br>") + "<br>"
+    document.getElementById("title").textContent = "<b>" + ret.data.titlereal + "</b>"
+    document.getElementById("author").textContent =  "Published on <i><b>" + ret.data.creationdate + "</b></i><br>Written by <i><b>" + ret.data.uploader + "</b></i>"
     document.getElementById("cover").src = ret.data.cover
   })
 .catch(function(e){
