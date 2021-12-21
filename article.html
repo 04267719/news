@@ -194,13 +194,13 @@ client.query(
   
 
 
-      document.getElementById("firstpost").innerHTML = "<b><a style=\"color:black\" href=\"https://falcon-news.netlify.app/article.html/?" + x.data[x.data.length - 1].data.title + "\">" + title1 + "</a>" + "</b> by <i>" + name1 + "</i>"
+      document.getElementById("firstpost").textContent = "<b><a style=\"color:black\" href=\"https://falcon-news.netlify.app/article.html/?" + x.data[x.data.length - 1].data.title + "\">" + title1 + "</a>" + "</b> by <i>" + name1 + "</i>"
       document.getElementById("firstimage").src = x.data[x.data.length - 1].data.cover
 
-      document.getElementById("secondpost").innerHTML = "<b><a style=\"color:black\" href=\"https://falcon-news.netlify.app/article.html/?" + x.data[x.data.length - 2].data.title + "\">" + title2 + "</a>" + "</b> by <i>" + name2 + "</i>"
+      document.getElementById("secondpost").textContent = "<b><a style=\"color:black\" href=\"https://falcon-news.netlify.app/article.html/?" + x.data[x.data.length - 2].data.title + "\">" + title2 + "</a>" + "</b> by <i>" + name2 + "</i>"
       document.getElementById("secondimage").src = x.data[x.data.length - 2].data.cover
 
-      document.getElementById("thirdpost").innerHTML = "<b><a style=\"color:black\" href=\"https://falcon-news.netlify.app/article.html/?" + x.data[x.data.length - 3].data.title + "\">" + title3 + "</a>" + "</b> by <i>" + name3 + "</i>"
+      document.getElementById("thirdpost").textContent = "<b><a style=\"color:black\" href=\"https://falcon-news.netlify.app/article.html/?" + x.data[x.data.length - 3].data.title + "\">" + title3 + "</a>" + "</b> by <i>" + name3 + "</i>"
       document.getElementById("thirdimage").src = x.data[x.data.length - 3].data.cover
 
                                    
